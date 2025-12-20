@@ -1,0 +1,153 @@
+{
+  "single quotes": {
+    "prefix": "q",
+    "body": ["'$1'$0"],
+    "description": "single quotes"
+  },
+  "double quotes": {
+    "prefix": "dq",
+    "body": ["\"$1\"$0"],
+    "description": "double quotes"
+  },
+  "brackets": {
+    "prefix": "b",
+    "body": ["($1)$0"],
+    "description": "brackets"
+  },
+  "square brackets": {
+    "prefix": "sb",
+    "body": ["[$1]$0"],
+    "description": "square brackets"
+  },
+  "curly brackets": {
+    "prefix": "cb",
+    "body": ["{$1}$0"],
+    "description": "square brackets"
+  },
+  "underscore": {
+    "prefix": "u",
+    "body": ["_$0"],
+    "description": "underscore"
+  },
+  "colon": {
+    "prefix": "c",
+    "body": [":$0"],
+    "description": "colon"
+  },
+  "double colon": {
+    "prefix": "cc",
+    "body": ["::$0"],
+    "description": "double colon"
+  },
+  "semi colon": {
+    "prefix": "sc",
+    "body": [";$0"],
+    "description": "Semi Colon"
+  },
+  "forward slash": {
+    "prefix": "s",
+    "body": ["/$0"],
+    "description": "forward slash"
+  },
+  "double forward slash": {
+    "prefix": "ss",
+    "body": ["//$0"],
+    "description": "double forward slash"
+  },
+  "equals": {
+    "prefix": "e",
+    "body": ["=$0"],
+    "description": "Equals"
+  },
+  "double equals": {
+    "prefix": "ee",
+    "body": ["==$0"],
+    "description": "Double Equals"
+  },
+  "triple equals": {
+    "prefix": "eee",
+    "body": ["===$0"],
+    "description": "Triple Equals"
+  },
+  "not equals": {
+    "prefix": "ne",
+    "body": ["!=$0"],
+    "description": "Equals"
+  },
+  "greater than": {
+    "prefix": "gt",
+    "body": [">$0"],
+    "description": "Greater than"
+  },
+  "greater than or equal to": {
+    "prefix": "gte",
+    "body": [">=$0"],
+    "description": "Greater than or equal to"
+  },
+  "less than": {
+    "prefix": "lt",
+    "body": ["<$0"],
+    "description": "Less than"
+  },
+  "less than or equal to": {
+    "prefix": "lte",
+    "body": ["<=$0"],
+    "description": "Less than or equal to"
+  },
+  "plus": {
+    "prefix": "p",
+    "body": ["+$0"],
+    "description": "Plus"
+  },
+  "plus plus": {
+    "prefix": "pp",
+    "body": ["++$0"],
+    "description": "Plus plus"
+  },
+  "plus equals": {
+    "prefix": "pe",
+    "body": ["+=$0"],
+    "description": "Plus equals"
+  },
+  "minus": {
+    "prefix": "m",
+    "body": ["-$0"],
+    "description": "Minus"
+  },
+  "minus minus": {
+    "prefix": "mm",
+    "body": ["--$0"],
+    "description": "Minus"
+  },
+  "minus equals": {
+    "prefix": "me",
+    "body": ["-=$0"],
+    "description": "Minus"
+  },
+  "question mark": {
+    "prefix": "qm",
+    "body": ["?$0"],
+    "description": "Question mark"
+  },
+  "colon equals": {
+    "prefix": "ce",
+    "body": [":=$0"],
+    "description": "Colon equals"
+  },
+  "and": {
+    "prefix": "and",
+    "body": ["&&$0"],
+    "description": "and"
+  },
+  "or": {
+    "prefix": "or",
+    "body": ["||$0"],
+    "description": "or"
+  },
+
+  "percentage": {
+    "prefix": "per",
+    "body": ["%$0"],
+    "description": "Percentage"
+  }
+}

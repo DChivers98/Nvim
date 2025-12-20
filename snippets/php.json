@@ -1,8 +1,97 @@
 {
+  "variable": {
+    "prefix": "v",
+    "body": ["$"],
+    "description": "Insert dollar sign"
+  },
+  "property": {
+    "prefix": "vv",
+    "body": ["\\$this->$0"],
+    "description": "Insert $this->"
+  },
+  "variable arrow": {
+    "prefix": "va",
+    "body": ["\\$${1}->${2}"],
+    "description": "variable arrow accessor"
+  },
+  "variable double arrow": {
+    "prefix": "vaa",
+    "body": ["\\$${1}=>${2}"],
+    "description": "variable arrow accessor"
+  },
+  "variable linked list": {
+    "prefix": "vl",
+    "body": ["'${1}' => \\$${2}"],
+    "description": "item linked list"
+  },
+  "variable linked list with arrow": {
+    "prefix": "vla",
+    "body": ["'${1}' => \\$${2}->${3}"],
+    "description": "item linked list"
+  },
+  "arrow": {
+    "prefix": "a",
+    "body": ["->"],
+    "desciption": "Insert double arrow"
+  },
+  "double arrow": {
+    "prefix": "aa",
+    "body": ["=>"],
+    "desciption": "Insert double arrow"
+  },
   "strict types": {
     "prefix": "strict",
     "description": "Add strict types declaration",
     "body": ["declare(strict_types=1);"]
+  },
+  "if elseif else": {
+    "prefix": "ifelseif",
+    "description": "Create if-elseif-else statement",
+    "body": [
+      "if (${1:condition}) {",
+      "    ${2}",
+      "} elseif (${3:condition}) {",
+      "    ${4}",
+      "} else {",
+      "    ${0}",
+      "}"
+    ]
+  },
+  "foreach": {
+    "prefix": "fore",
+    "description": "Create foreach loop",
+    "body": ["foreach (${1:\\$array} as ${2:\\$value}) {", "    ${0}", "}"]
+  },
+  "foreach key value": {
+    "prefix": "forek",
+    "description": "Create foreach loop with key and value",
+    "body": [
+      "foreach (${1:\\$array} as ${2:\\$key} => ${3:\\$value}) {",
+      "    ${0}",
+      "}"
+    ]
+  },
+  "for": {
+    "prefix": "for",
+    "description": "Create for loop",
+    "body": [
+      "for (${1:\\$i} = ${2:0}; ${1:\\$i} < ${3:count}; ${1:\\$i}++) {",
+      "    ${0}",
+      "}"
+    ]
+  },
+  "try catch finally": {
+    "prefix": "tryf",
+    "description": "Create try-catch-finally block",
+    "body": [
+      "try {",
+      "    ${1}",
+      "} catch (${2:\\Exception} ${3:\\$e}) {",
+      "    ${4}",
+      "} finally {",
+      "    ${0}",
+      "}"
+    ]
   },
   "inv": {
     "prefix": "inv",
@@ -18,7 +107,7 @@
   "public method": {
     "prefix": "pubf",
     "description": "Create a public method",
-    "body": ["public function ${1}(${2}): ${3:void}", "{", "    ${0}", "}", ""]
+    "body": ["public function ${1}(${2})", "{", "    ${0}", "}", ""]
   },
   "protected method": {
     "prefix": "prof",

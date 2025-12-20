@@ -1,0 +1,49 @@
+{
+  "arrow": {
+    "prefix": "a",
+    "body": ["=>"],
+    "description": "Insert list arrow"
+  },
+  "Export Function": {
+    "prefix": "efn",
+    "body": [
+      "export function ${1:functionName}(${2:params}): ${3:ReturnType} {",
+      "  $0",
+      "};"
+    ],
+    "description": "TypeScript arrow function"
+  },
+  "Arrow Function": {
+    "prefix": "fn",
+    "body": [
+      "const ${1:functionName} = (${2:params}): ${3:ReturnType} => {",
+      "  $0",
+      "};"
+    ],
+    "description": "TypeScript arrow function"
+  },
+  "Async Arrow Function": {
+    "prefix": "asf",
+    "body": [
+      "const ${1:functionName} = async (${2:params}): Promise<${3:ReturnType}> => {",
+      "  $0",
+      "};"
+    ],
+    "description": "Async TypeScript arrow function"
+  },
+  "Inline Arrow Function": {
+    "prefix": "af",
+    "body": ["() => {$0}"],
+    "description": "Inline arrow function"
+  },
+  "Inline Arrow Function with Param": {
+    "prefix": "afe",
+    "body": ["(${1:e}) => {$0}"],
+    "description": "Inline arrow function with parameter"
+  },
+  "Inline Arrow Function Expression": {
+    "prefix": "afx",
+    "body": ["(${1:param}) => {$0}"],
+    "description": "Inline arrow function expression (no braces)"
+  }
+}

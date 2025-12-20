@@ -6,6 +6,4 @@ vim.g.lazyvim_php_lsp = "intelephense"
 local opt = vim.opt
 
 opt.backup = false
-opt.wrap = true
-opt.linebreak = true
-opt.textwidth = 100
+opt.winbar = " "

@@ -2,10 +2,9 @@
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
 -- Add any additional autocmds here
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-  pattern = "*.blade.php",
-  callback = function()
-    vim.bo.filetype = "blade"
-    -- Override for Intelephense to treat Blade as PHP
-    vim.bo.filetype = "php"
-  end,
+    pattern = "*.blade.php",
+    callback = function()
+        vim.bo.filetype = "blade"
+        vim.bo.filetype = "php"
+    end,
 })
