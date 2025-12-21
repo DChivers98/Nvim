@@ -8,11 +8,6 @@ local opts = { noremap = true, silent = true }
 -- Save buffer
 keymap("n", "fs", ":w<CR>", opts)
 
--- New Tab
-keymap("n", "te", ":tabedit<CR>", opts)
-keymap("n", "sp", ":split<CR><C-w>l", opts)
-keymap("n", "sv", ":vsplit<CR><C-w>l", opts)
-
 -- Better line start/end
 keymap("n", "H", "^", opts)
 keymap("n", "L", "$", opts)
