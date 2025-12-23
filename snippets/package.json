@@ -6,6 +6,10 @@
         "path": "./php.json"
       },
       {
+        "language": "blade",
+        "path": "./blade.json"
+      },
+      {
         "language": "typescriptreact",
         "path": "./tsx.json"
       },
