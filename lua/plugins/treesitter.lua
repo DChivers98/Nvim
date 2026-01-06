@@ -20,18 +20,4 @@ return {
         },
         "nvim-treesitter/nvim-treesitter-textobjects",
     },
-    opts = {
-        auto_install = true,
-        highlight = { enable = true },
-        indent = { enable = true },
-        parser_install_info = {
-            blade = {
-                url = "https://github.com/EmranMR/tree-sitter-blade",
-                files = { "src/parser.c" },
-                branch = "main",
-                generate_requires_npm = true,
-                requires_generate_from_grammar = true,
-            },
-        },
-    },
 }

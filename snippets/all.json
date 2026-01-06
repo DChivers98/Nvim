@@ -144,7 +144,6 @@
     "body": ["||$0"],
     "description": "or"
   },
-
   "percentage": {
     "prefix": "per",
     "body": ["%$0"],

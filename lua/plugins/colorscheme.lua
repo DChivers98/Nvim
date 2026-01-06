@@ -58,11 +58,13 @@ return {
                 hl(g, { bg = frappe_bg, fg = gray })
             end
 
-            -- CMP popup
+            -- CMP popup coloring
             hl("Pmenu", { bg = frappe_bg, fg = beige })
             hl("PmenuSel", { bg = pink, fg = frappe_bg })
             hl("PmenuThumb", { bg = pink })
             hl("PmenuSbar", { bg = frappe_bg })
+            -- Pink border specifically for CMP
+            hl("PmenuBorder", { fg = pink, bg = frappe_bg })
 
             -- Strings
             hl("String", { fg = beige })
@@ -120,16 +122,18 @@ return {
                 end,
             })
 
-            -- CMP setup
+            -- CMP setup with proper pink rounded border
             local cmp = require("cmp")
             cmp.setup({
                 window = {
                     completion = cmp.config.window.bordered({
-                        winhighlight = "Normal:Pmenu,FloatBorder:FloatBorder",
+                        border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+                        winhighlight = "Normal:Pmenu,FloatBorder:PmenuBorder",
                         winblend = 0,
                     }),
                     documentation = cmp.config.window.bordered({
-                        winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder",
+                        border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+                        winhighlight = "Normal:NormalFloat,FloatBorder:PmenuBorder",
                         winblend = 0,
                     }),
                 },

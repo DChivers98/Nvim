@@ -112,24 +112,18 @@
   "protected method": {
     "prefix": "prof",
     "description": "Create a protected method",
-    "body": [
-      "protected function ${1}(${2}): ${3:void}",
-      "{",
-      "    ${0}",
-      "}",
-      ""
-    ]
+    "body": ["protected function ${1}(${2}): ${3}", "{", "    ${0}", "}", ""]
   },
   "private method": {
     "prefix": "prif",
     "description": "Create a private method",
-    "body": ["private function ${1}(${2}): ${3:void}", "{", "    ${0}", "}", ""]
+    "body": ["private function ${1}(${2}): ${3}", "{", "    ${0}", "}", ""]
   },
   "public static method": {
     "prefix": "pubsf",
     "description": "Create a public static method",
     "body": [
-      "public static function ${1}(${2}): ${3:void}",
+      "public static function ${1}(${2}): ${3}",
       "{",
       "    ${0}",
       "}",

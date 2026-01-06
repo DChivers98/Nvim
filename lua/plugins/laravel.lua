@@ -5,11 +5,10 @@ return {
             "MunifTanjim/nui.nvim",
             "nvim-lua/plenary.nvim",
             "nvim-neotest/nvim-nio",
+            "folke/snacks.nvim",
         },
         ft = { "php", "blade" },
-        event = {
-            "BufEnter composer.json",
-        },
+        event = { "VeryLazy" },
         cmd = { "Laravel" },
         keys = {
             { "<leader>cl", desc = "Laravel" },
@@ -103,7 +102,7 @@ return {
         opts = {
             features = {
                 pickers = {
-                    provider = "snacks",
+                    provider = "telescope",
                 },
             },
         },
