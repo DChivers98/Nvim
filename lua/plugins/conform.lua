@@ -4,6 +4,7 @@ return {
         opts = {
             formatters_by_ft = {
                 php = { "pint" },
+                blade = { "blade-formatter" },
             },
             formatters = {
                 pint = {
@@ -11,18 +12,12 @@ return {
                     args = { "$FILENAME" },
                     stdin = false,
                 },
+                blade_formatter = {
+                    command = "blade-formatter",
+                    args = { "--stdin" },
+                    stdin = true,
+                },
             },
         },
-    },
-    {
-        "nvimtools/none-ls.nvim",
-        opts = function(_, opts)
-            opts.sources = opts.sources or {}
-
-            -- Filter out any PHP formatters from none-ls
-            opts.sources = vim.tbl_filter(function(source)
-                return not (source.filetypes and vim.tbl_contains(source.filetypes, "php"))
-            end, opts.sources)
-        end,
     },
 }
