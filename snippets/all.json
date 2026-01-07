@@ -1,4 +1,14 @@
 {
+  "arrow": {
+    "prefix": "a",
+    "body": ["->"],
+    "desciption": "Insert double arrow"
+  },
+  "double arrow": {
+    "prefix": "aa",
+    "body": ["=>"],
+    "desciption": "Insert double arrow"
+  },
   "single quotes": {
     "prefix": "q",
     "body": ["'$1'$0"],
