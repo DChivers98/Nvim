@@ -6,6 +6,7 @@ return {
             "nvim-lua/plenary.nvim",
             "nvim-neotest/nvim-nio",
             "folke/snacks.nvim",
+            "nvim-telescope/telescope.nvim",
         },
         ft = { "php", "blade" },
         event = { "VeryLazy" },
