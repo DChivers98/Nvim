@@ -9,6 +9,7 @@ return {
         "saadparwaiz1/cmp_luasnip",
         "onsails/lspkind.nvim",
         "L3MON4D3/LuaSnip",
+        "roobert/tailwindcss-colorizer-cmp.nvim",
     },
     opts = function()
         vim.opt.termguicolors = true
@@ -92,15 +93,16 @@ return {
             }),
 
             formatting = {
-                formatting = {
-                    format = lspkind.cmp_format({
-                        mode = "symbol_text",
-                        before = function(_, item)
-                            item.kind_hl_group = "CmpKind"
-                            return item
-                        end,
-                    }),
-                },
+                format = lspkind.cmp_format({
+                    mode = "symbol_text",
+                    before = function(entry, vim_item)
+                        vim_item.kind_hl_group = "CmpKind"
+
+                        vim_item = require("tailwindcss-colorizer-cmp").formatter(entry, vim_item)
+
+                        return vim_item
+                    end,
+                }),
             },
 
             experimental = {
