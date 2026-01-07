@@ -29,16 +29,6 @@
     "body": ["'${1}' => \\$${2}->${3}"],
     "description": "item linked list"
   },
-  "arrow": {
-    "prefix": "a",
-    "body": ["->"],
-    "desciption": "Insert double arrow"
-  },
-  "double arrow": {
-    "prefix": "aa",
-    "body": ["=>"],
-    "desciption": "Insert double arrow"
-  },
   "strict types": {
     "prefix": "strict",
     "description": "Add strict types declaration",

@@ -1,4 +1,9 @@
 {
+  "variable": {
+    "prefix": "v",
+    "body": ["$"],
+    "description": "Insert dollar sign"
+  },
   "Extend layout": {
     "prefix": "@extends",
     "body": "@extends('${1:name}')",

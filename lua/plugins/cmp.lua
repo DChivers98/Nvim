@@ -86,10 +86,16 @@ return {
 
             sources = cmp.config.sources({
                 { name = "laravel", priority = 1000 },
-                { name = "nvim_lsp" },
-                { name = "luasnip" },
-                { name = "path" },
-                { name = "buffer" },
+                {
+                    name = "nvim_lsp",
+                    priority = 900,
+                    option = {
+                        completion = { keyword_length = 2 },
+                    },
+                },
+                { name = "luasnip", priority = 800 },
+                { name = "path", priority = 500 },
+                { name = "buffer", priority = 100 },
             }),
 
             formatting = {

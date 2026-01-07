@@ -28,6 +28,14 @@ return {
                         typescriptreact = { options = { ["bem.enabled"] = true } },
                     },
                 },
+                html = {
+                    filetypes = { "html", "blade" },
+                    init_options = {
+                        configurationSection = { "html", "css", "javascript" },
+                        embeddedLanguages = { css = true, javascript = true },
+                        provideFormatter = true,
+                    },
+                },
             },
         },
     },
