@@ -9,6 +9,11 @@
     "body": ["\\$this->$0"],
     "description": "Insert $this->"
   },
+  "table": {
+    "prefix": "vt",
+    "body": ["\\$table->"],
+    "description": "Insert $table->"
+  },
   "variable arrow": {
     "prefix": "va",
     "body": ["\\$${1}->${2}"],
