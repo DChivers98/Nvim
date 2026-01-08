@@ -115,7 +115,4 @@ return {
         },
         ft = { "blade", "php" },
     },
-    {
-        "jwalton512/vim-blade",
-    },
 }

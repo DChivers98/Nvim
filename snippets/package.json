@@ -2,12 +2,11 @@
   "contributes": {
     "snippets": [
       {
-        "language": "php",
+        "language": [
+          "php",
+          "blade"
+        ],
         "path": "./php.json"
-      },
-      {
-        "language": "blade",
-        "path": "./blade.json"
       },
       {
         "language": "typescriptreact",

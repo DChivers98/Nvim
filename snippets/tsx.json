@@ -1,9 +1,4 @@
 {
-  "arrow": {
-    "prefix": "a",
-    "body": ["=>"],
-    "description": "Insert list arrow"
-  },
   "Export Function": {
     "prefix": "efn",
     "body": [
