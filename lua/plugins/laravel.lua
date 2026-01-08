@@ -21,13 +21,6 @@ return {
                 desc = "Open Laravel Picker",
             },
             {
-                "<c-g>",
-                function()
-                    Laravel.commands.run("view:finder")
-                end,
-                desc = "Open View Finder",
-            },
-            {
                 "<leader>cla",
                 function()
                     Laravel.pickers.artisan()
@@ -84,17 +77,20 @@ return {
                 desc = "Open Command Center",
             },
             {
+                "<c-g>",
+                function()
+                    Laravel.commands.run("view:finder")
+                end,
+                desc = "Open View Finder",
+            },
+            {
                 "gf",
                 function()
-                    local ok, res = pcall(function()
-                        if Laravel.app("gf").cursorOnResource() then
-                            return "<cmd>lua Laravel.commands.run('gf')<cr>"
-                        end
-                    end)
-                    if not ok or not res then
-                        return "gf"
+                    local gf_app = Laravel.app("gf")
+                    if gf_app and gf_app.cursorOnResource and gf_app.cursorOnResource() then
+                        return "<cmd>Laravel commands run gf<cr>"
                     end
-                    return res
+                    return "gf"
                 end,
                 expr = true,
                 noremap = true,
@@ -103,16 +99,14 @@ return {
         opts = {
             features = {
                 pickers = {
-                    provider = "telescope",
+                    provider = "snacks",
                 },
             },
         },
     },
     {
         "ricardoramirezr/blade-nav.nvim",
-        dependencies = {
-            "hrsh7th/nvim-cmp",
-        },
+        dependencies = { "hrsh7th/nvim-cmp" },
         ft = { "blade", "php" },
     },
 }
