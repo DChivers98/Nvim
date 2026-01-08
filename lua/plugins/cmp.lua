@@ -106,7 +106,6 @@ return {
                     end
                 end),
 
-                ["<Space>"] = cmp.mapping.confirm({ select = true }),
                 ["<CR>"] = cmp.mapping.confirm({ select = true }),
             }),
 
