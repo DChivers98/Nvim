@@ -122,23 +122,6 @@ return {
                 end,
             })
 
-            -- CMP setup with proper pink rounded border
-            local cmp = require("cmp")
-            cmp.setup({
-                window = {
-                    completion = cmp.config.window.bordered({
-                        border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-                        winhighlight = "Normal:Pmenu,FloatBorder:PmenuBorder",
-                        winblend = 0,
-                    }),
-                    documentation = cmp.config.window.bordered({
-                        border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-                        winhighlight = "Normal:NormalFloat,FloatBorder:PmenuBorder",
-                        winblend = 0,
-                    }),
-                },
-            })
-
             -- LSP floating preview
             local orig_open = vim.lsp.util.open_floating_preview
             function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)

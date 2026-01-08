@@ -44,44 +44,69 @@ return {
             window = {
                 completion = cmp.config.window.bordered({
                     border = "rounded",
-                    padding = { 1, 2 },
-                    winhighlight = "NormalFloat:CmpNormal,FloatBorder:CmpBorder,CursorLine:PmenuSel",
+                    padding = { 0, 1 },
+
+                    winblend = 0,
+
+                    winhighlight = table.concat({
+                        "Normal:CmpNormal",
+                        "CursorLine:PmenuSel",
+                        "FloatBorder:PmenuBorder",
+                    }, ","),
                 }),
+
                 documentation = cmp.config.window.bordered({
                     border = "rounded",
-                    padding = { 1, 2 },
-                    winhighlight = "NormalFloat:CmpNormal,FloatBorder:CmpBorder",
+                    side = "right",
+                    padding = { 0, 1 },
+
+                    winblend = 0,
+
+                    winhighlight = table.concat({
+                        "Normal:NormalFloat",
+                        "FloatBorder:PmenuBorder",
+                    }, ","),
                 }),
+            },
+
+            view = {
+                docs = {
+                    auto_open = false,
+                },
             },
 
             completion = { completeopt = "menu,menuone,noinsert" },
 
             mapping = cmp.mapping.preset.insert({
-                ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-                ["<C-f>"] = cmp.mapping.scroll_docs(4),
-                ["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
-                ["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
-                ["<C-Space>"] = cmp.mapping.complete(),
-                ["<CR>"] = cmp.mapping.confirm({ select = true }),
-                ["<S-CR>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
-                ["<Tab>"] = cmp.mapping(function(fallback)
-                    if cmp.visible() then
-                        cmp.select_next_item()
-                    elseif luasnip.expand_or_jumpable() then
-                        luasnip.expand_or_jump()
+                ["<C-j>"] = cmp.mapping(function(fallback)
+                    if cmp.visible_docs() then
+                        cmp.scroll_docs(4)
+                    elseif cmp.visible() then
+                        cmp.select_next_item({ behavior = cmp.SelectBehavior.Insert })
                     else
                         fallback()
                     end
                 end, { "i", "s" }),
-                ["<S-Tab>"] = cmp.mapping(function(fallback)
-                    if cmp.visible() then
-                        cmp.select_prev_item()
-                    elseif luasnip.jumpable(-1) then
-                        luasnip.jump(-1)
+
+                ["<C-k>"] = cmp.mapping(function(fallback)
+                    if cmp.visible_docs() then
+                        cmp.scroll_docs(-4)
+                    elseif cmp.visible() then
+                        cmp.select_prev_item({ behavior = cmp.SelectBehavior.Insert })
                     else
                         fallback()
                     end
                 end, { "i", "s" }),
+
+                ["<C-d>"] = cmp.mapping(function()
+                    if cmp.visible_docs() then
+                        cmp.close_docs()
+                    else
+                        cmp.open_docs()
+                    end
+                end),
+
+                ["<Space>"] = cmp.mapping.confirm({ select = true }),
             }),
 
             sources = cmp.config.sources({
