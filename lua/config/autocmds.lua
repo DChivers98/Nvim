@@ -16,7 +16,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.schedule(function()
             local clients = vim.lsp.get_clients({ bufnr = args.buf })
             for _, client in ipairs(clients) do
-                if client.name == "phpactor" then
+                if client.name == "intelephense" then
                     vim.bo[args.buf].filetype = "blade"
                     break
                 end
