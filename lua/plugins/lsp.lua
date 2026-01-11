@@ -20,14 +20,6 @@ return {
                         },
                     },
                 },
-                emmet_ls = {
-                    filetypes = { "html", "blade", "css", "javascriptreact", "typescriptreact" },
-                    init_options = {
-                        html = { options = { ["bem.enabled"] = true } },
-                        jsx = { options = { ["bem.enabled"] = true } },
-                        typescriptreact = { options = { ["bem.enabled"] = true } },
-                    },
-                },
                 html = {
                     filetypes = { "html", "blade" },
                     init_options = {
