@@ -15,17 +15,11 @@ return {
         vim.opt.termguicolors = true
         local pink = "#e6a8c9"
 
-        -- Highlight groups for cmp menu and icons
         vim.api.nvim_set_hl(0, "CmpBorder", { fg = pink, bg = "NONE" })
-        vim.api.nvim_set_hl(0, "CmpNormal", { bg = "NONE" })
-        vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
-        vim.api.nvim_set_hl(0, "CmpKind", { fg = pink }) -- All icons pink
 
         vim.api.nvim_create_autocmd("ColorScheme", {
             callback = function()
                 vim.api.nvim_set_hl(0, "CmpBorder", { fg = pink, bg = "NONE" })
-                vim.api.nvim_set_hl(0, "CmpNormal", { bg = "NONE" })
-                vim.api.nvim_set_hl(0, "CmpKind", { fg = pink })
             end,
         })
 
@@ -45,13 +39,11 @@ return {
                 completion = cmp.config.window.bordered({
                     border = "rounded",
                     padding = { 0, 1 },
-
                     winblend = 0,
-
                     winhighlight = table.concat({
-                        "Normal:CmpNormal",
-                        "CursorLine:PmenuSel",
-                        "FloatBorder:PmenuBorder",
+                        "Normal:Normal",
+                        "CursorLine:CursorLine",
+                        "FloatBorder:CmpBorder",
                     }, ","),
                 }),
 
@@ -59,12 +51,10 @@ return {
                     border = "rounded",
                     side = "right",
                     padding = { 0, 1 },
-
                     winblend = 0,
-
                     winhighlight = table.concat({
                         "Normal:NormalFloat",
-                        "FloatBorder:PmenuBorder",
+                        "FloatBorder:CmpBorder",
                     }, ","),
                 }),
             },
@@ -124,20 +114,20 @@ return {
             }),
 
             formatting = {
+                fields = { "abbr", "kind", "menu" },
                 format = lspkind.cmp_format({
                     mode = "symbol_text",
+                    maxwidth = 50,
                     before = function(entry, vim_item)
-                        vim_item.kind_hl_group = "CmpKind"
-
-                        vim_item = require("tailwindcss-colorizer-cmp").formatter(entry, vim_item)
-
+                        vim_item =
+                            require("tailwindcss-colorizer-cmp").formatter(entry, vim_item, { enable_icon = false })
                         return vim_item
                     end,
                 }),
             },
 
             experimental = {
-                ghost_text = { hl_group = "CmpGhostText" },
+                ghost_text = { hl_group = "Comment" },
             },
 
             sorting = defaults.sorting,
