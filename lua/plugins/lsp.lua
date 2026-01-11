@@ -3,10 +3,10 @@ return {
         "neovim/nvim-lspconfig",
         opts = {
             servers = {
-                phpactor = {
+                intelephense = {
                     filetypes = { "php", "blade", "php_only" },
                     settings = {
-                        phpactor = {
+                        intelephense = {
                             index = {
                                 enabled = true,
                                 scanFolders = {
