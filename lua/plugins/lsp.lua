@@ -41,6 +41,18 @@ return {
                         provideFormatter = true,
                     },
                 },
+                tailwindcss = {
+                    filetypes = {
+                        "html",
+                        "vue",
+                        "javascript",
+                        "typescript",
+                        "javascriptreact",
+                        "typescriptreact",
+                        "php",
+                        "blade",
+                    },
+                },
             },
         },
     },

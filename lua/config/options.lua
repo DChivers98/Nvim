@@ -5,5 +5,7 @@ vim.g.lazyvim_php_lsp = "intelephense"
 
 local opt = vim.opt
 
+opt.swapfile = false
 opt.backup = false
+opt.writebackup = false
 opt.winbar = " "
